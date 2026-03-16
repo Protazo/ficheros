@@ -2,6 +2,7 @@ import jdk.jshell.EvalException;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Ej5 {
     static void main() {
@@ -26,11 +27,19 @@ public class Ej5 {
             for (String palabra : palabras) {
                 lista.add(palabra);
             }
-            lista.sort();
+            Collections.sort(lista);
 
 
             br.close();
 
+            PrintWriter pw2 = new PrintWriter(
+                    new BufferedWriter (new FileWriter("src/ej5.txt")));
+
+            for (int i = 0; i < lista.size(); i++) {
+                pw2.println(lista.get(i));
+            }
+
+            pw2.close();
             System.out.println(lista);
 
         } catch (FileNotFoundException e) {
