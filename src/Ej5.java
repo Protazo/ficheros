@@ -18,13 +18,14 @@ public class Ej5 {
             pw.close();
 
             BufferedReader br = new BufferedReader(
-                    new FileReader("src/datos.txt")
+                    new FileReader("src/Shrek.txt")
             );
 
 
-            String[] palabras = br.readLine().split(" ");
+            String palabras = String.valueOf(br.readAllLines());
+            String[] palabrasarray = palabras.split(" ");
             ArrayList<String> lista = new ArrayList<>();
-            for (String palabra : palabras) {
+            for (String palabra : palabrasarray) {
                 lista.add(palabra);
             }
             Collections.sort(lista);
